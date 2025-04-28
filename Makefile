@@ -1,4 +1,4 @@
-all:
+build:
 	$(CC) main.c -o sysdbd -lcrossdb -lpthread -g
 
 run: all
