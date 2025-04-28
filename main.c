@@ -20,7 +20,8 @@ int main (int argc, char **argv)
 	pRes = xdb_exec (pConn, "CREATE DATABASE config ENGINE = MEMORY");
 	pRes = xdb_exec (pConn, "USE config");
 	pRes = xdb_exec (pConn, "SOURCE '/sonic-ng/schema/config/config.sql'");
-	pRes = xdb_exec (pConn, "SOURCE 'init.sql'");
+	pRes = xdb_exec (pConn, "SOURCE '/sonic-ng/config/config_db.sql'");
+	XDB_RESCHK(pRes);
 
 	pRes = xdb_exec (pConn, "CREATE DATABASE appl ENGINE = MEMORY");
 	pRes = xdb_exec (pConn, "USE appl");
